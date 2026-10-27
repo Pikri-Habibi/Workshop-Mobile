@@ -32,6 +32,15 @@ class _ProfilePageState extends State<ProfilePage> {
     if (!mounted || result is! Profile) return;
     setState(() => _profile = result);
   }
+
+  void _logout() {
+    // Pindah ke Splash DAN hapus semua halaman di bawahnya
+    Navigator.pushNamedAndRemoveUntil(
+      context,
+      AppRoutes.splash,
+      (route) => false, // false = hapus semua route lama
+    );
+  }
   
   @override
   Widget build(BuildContext context) {
@@ -44,6 +53,15 @@ class _ProfilePageState extends State<ProfilePage> {
             tooltip: 'Edit profil',
             onPressed: _openEditProfile,
           ),
+          IconButton(
+            icon: const Icon(Icons.logout),
+            tooltip: 'Keluar',
+            onPressed: _logout,
+          ),
+          TextButton(
+  onPressed: () => Navigator.pushNamed(context, '/halaman-ngawur'),
+  child: const Text('Uji 404'),
+),
         ],
       ),
       body: ListView(
