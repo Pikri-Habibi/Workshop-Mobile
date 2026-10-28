@@ -49,9 +49,9 @@ class _ProfilePageState extends State<ProfilePage> {
             onPressed: _logout,
           ),
           TextButton(
-  onPressed: () => Navigator.pushNamed(context, '/halaman-ngawur'),
-  child: const Text('Uji 404'),
-),
+            onPressed: () => context.go('/not-found_pages'),
+            child: const Text('Uji 404'),
+          ),
         ],
       ),
       body: ListView(
