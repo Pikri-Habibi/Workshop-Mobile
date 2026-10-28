@@ -27,5 +27,12 @@ const dummyProjects = <Project>[
     description: 'Dashboard mobile untuk memantau suhu dan kelembapan '
         'kandang secara real-time.',
     techStack: ['Flutter', 'MQTT', 'Cloud'],
-  ),
+  ),  
 ];
+
+Project? findProjectById(String id) {
+  for (final project in dummyProjects) {
+    if (project.id == id) return project;
+  }
+  return null; // tidak ditemukan
+}
